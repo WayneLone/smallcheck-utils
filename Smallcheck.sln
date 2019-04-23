@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smallcheck.Utils", "Smallcheck.Utils\Smallcheck.Utils.csproj", "{D745C666-17C7-45E5-8283-4ADF7A23DA2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D745C666-17C7-45E5-8283-4ADF7A23DA2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D745C666-17C7-45E5-8283-4ADF7A23DA2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D745C666-17C7-45E5-8283-4ADF7A23DA2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D745C666-17C7-45E5-8283-4ADF7A23DA2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7A44047-624E-48DB-A4E6-D1B6B5590E0E}
+	EndGlobalSection
+EndGlobal
