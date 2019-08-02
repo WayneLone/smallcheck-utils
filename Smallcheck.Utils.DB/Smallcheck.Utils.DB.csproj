@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D745C666-17C7-45E5-8283-4ADF7A23DA2B}</ProjectGuid>
+    <ProjectGuid>{F100E28A-DE0C-448D-A77D-CEA2B48C9FF5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Smallcheck.Utils</RootNamespace>
-    <AssemblyName>Smallcheck.Utils</AssemblyName>
+    <RootNamespace>Smallcheck.Utils.DB</RootNamespace>
+    <AssemblyName>Smallcheck.Utils.DB</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,7 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,16 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Encryption\AESUtil.cs" />
-    <Compile Include="Encryption\HashUtils.cs" />
-    <Compile Include="Encryption\RSAUtil.cs" />
-    <Compile Include="Encryption\XXTEAUtil.cs" />
-    <Compile Include="Extensions\DateTimeExtensions.cs" />
-    <Compile Include="Extensions\NumeralExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Network\HttpClientHelper.cs" />
+    <Compile Include="DBContext.cs" />
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="DBUtils.cs" />
+    <Compile Include="PageQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

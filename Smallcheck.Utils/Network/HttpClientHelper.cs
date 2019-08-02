@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Http;
 
-namespace Smallcheck.Utils
+namespace Smallcheck.Utils.Network
 {
     /// <summary>
     /// HttpCient Helper
@@ -24,6 +24,9 @@ namespace Smallcheck.Utils
             using (HttpClientHandler handler = new HttpClientHandler { CookieContainer = cookieContainer })
             using (HttpClient client = new HttpClient(handler))
             {
+                // 添加SSL
+                // ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+                // ServicePointManager.FindServicePoint(uri).ConnectionLeaseTimeout = 60 * 1000;
                 client.DefaultRequestHeaders.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
                 // 添加Http headers
                 if (headers != null)
