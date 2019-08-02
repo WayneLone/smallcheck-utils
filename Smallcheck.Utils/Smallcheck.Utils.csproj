@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\EnumHelper.cs" />
     <Compile Include="Encryption\AESUtil.cs" />
     <Compile Include="Encryption\HashUtils.cs" />
     <Compile Include="Encryption\RSAUtil.cs" />

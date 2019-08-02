@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EncryptionTest.cs" />
+    <Compile Include="EnumHelperTest.cs" />
+    <Compile Include="Models\Permission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
