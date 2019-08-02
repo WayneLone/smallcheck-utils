@@ -33,6 +33,44 @@ namespace Smallcheck.Utils.Encryption
         }
         #endregion
 
+        #region 签名 +static string SignWithXML(string data, string privateKey)
+        /// <summary>
+        /// 签名
+        /// </summary>
+        /// <param name="data">待签名数据</param>
+        /// <param name="privateKey">私钥</param>
+        /// <returns></returns>
+        public static string SignWithXML(string data, string privateKey)
+        {
+            byte[] dataBuffer = Encoding.UTF8.GetBytes(data);
+            using (RSACryptoServiceProvider rsaAlg = new RSACryptoServiceProvider())
+            {
+                rsaAlg.FromXmlString(privateKey);
+                byte[] signature = rsaAlg.SignData(dataBuffer, new SHA1CryptoServiceProvider());
+                return Convert.ToBase64String(signature);
+            }
+        }
+        #endregion
+
+        #region 验证签名 +static bool VerifyWithXML(string signature, string publicKey)
+        /// <summary>
+        /// 验证签名
+        /// </summary>
+        /// <param name="signature">签名</param>
+        /// <param name="publicKey">公钥</param>
+        /// <returns></returns>
+        public static bool VerifyWithXML(string data, string signature, string publicKey)
+        {
+            byte[] dataBuffer = Encoding.UTF8.GetBytes(data);
+            byte[] signatureBuffer = Convert.FromBase64String(signature);
+            using (RSACryptoServiceProvider rsaAlg = new RSACryptoServiceProvider())
+            {
+                rsaAlg.FromXmlString(publicKey);
+                return rsaAlg.VerifyData(dataBuffer, new SHA1CryptoServiceProvider(), signatureBuffer);
+            }
+        }
+        #endregion
+
         #region 使用RSA实现加密 +static string EncryptByXMLKey(string data, string publicKey)
         /// <summary>
         /// 使用RSA实现加密 XML字符串KEY

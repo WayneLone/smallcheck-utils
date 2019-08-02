@@ -63,9 +63,17 @@ namespace Smallcheck.Utils.Test
         {
             string data = "hello";
             RSAUtil.GetKeyPairXMLText(out string publicKey, out string privateKey);
+
+            // 加解密
             string encryptedText = RSAUtil.EncryptByXMLKey(data, publicKey);
             string result = RSAUtil.DecryptByXMLKey(encryptedText, privateKey);
             Assert.AreEqual(data, result);
+
+            // 签名验证
+            string signature = RSAUtil.SignWithXML(data, privateKey);
+            Console.WriteLine(signature);
+            bool isValidSignature = RSAUtil.VerifyWithXML(data, signature, publicKey);
+            Assert.IsTrue(isValidSignature);
         }
 
         [TestMethod]
